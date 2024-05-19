@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/icon.css">
+    <link rel="stylesheet" href="./src/css/music.css">
+    <script type="text/javascript" src="./src/js/rule_js/d3.v4.min.js"></script>
+
+    <title>music</title>
+</head>
+<div id="forceSvg" style="position: relative; z-index: 1;"></div>
+<!-- SVG画布 -->
+<force_1 class="force-layer"></force_1>
+<force_2 class="force-layer"style="top: 380px;left: 50px"></force_2>
+<force_3 class="force-layer"style="top: 480px;left: 30px"></force_3>
+<force_4 class="force-layer"style="top: 80px;left: 1490px"></force_4>
+<force_5 class="force-layer"style="top: 340px;left: 1520px"></force_5>
+<force_6 class="force-layer"style="top: 560px;left: 1450px"></force_6>
+
+<body>
+    <!-- 音乐源 -->
+    <audio src="/src/music/LostMemory.mp3"></audio>
+    <!-- 音乐播放器 -->
+    <div class="play_box">
+        <!-- 音乐播放器背景 -->
+        <div class="play_bc">
+            <img src="./src/img/resource/music_img/LostMemory.jpg" alt="">
+        </div>
+        <!-- 播放组件 -->
+        <div class="state">
+            <img class="head" src="./src/img/resource/music_img/LostMemory.jpg" alt="">
+            <div class="state_set iconfont icon-bofang"></div>
+        </div>
+        <!-- 进度条组件 -->
+        <div class="progress">
+            <div class="last iconfont icon-shangyishou"></div>
+            <div class="next iconfont icon-xiayishou"></div>
+            <div class="line">
+                <div class="pros">
+                    <div class="Anchor"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 时间组件 -->
+        <div class="time_show">00:00 / 00:00</div>
+        <!-- 音量组件 -->
+        <div class="tool">
+            <div class="volume iconfont icon-volumeMiddle">
+                <div class="volume_range">
+                    <input type="range" class="range">
+                </div>
+            </div>
+        </div>
+        <!-- 音乐信息组件 -->
+        <div class="music_info"></div>
+    </div>
+
+    <script src="./src/js/my_js/music.js"></script>
+    <script src="./src/js/my_js/force.js"></script>
+</body>
+
+</html>

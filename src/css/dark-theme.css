@@ -1,0 +1,94 @@
+/* 主体背景 */
+body {
+  background-color: #333;
+  color: #fff;
+}
+
+/* 链接颜色 */
+a {
+  color: #ccc;
+}
+
+/* 表格 */
+.table {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  border-top-color: #666;
+}
+
+/* 表格行高亮 */
+.table > tbody > tr:hover > td,
+.table > tbody > tr:hover > th {
+  background-color: #444;
+}
+
+/* 按钮 */
+.btn {
+  background-color: #555;
+  border-color: #444;
+  color: #fff;
+}
+
+/* 按钮 hover/focus */
+.btn:hover,
+.btn:focus,
+.btn.focus {
+  background-color: #666;
+  border-color: #444;
+}
+
+/* 警告、成功、错误等状态 */
+.alert {
+  background-color: #444;
+  border-color: #666;
+  color: #fff;
+}
+
+/* 进度条 */
+.progress {
+  background-color: #555;
+}
+
+/* 进度条条纹 */
+.progress-bar {
+  background-color: #ccc;
+}
+
+/* 形状边框 */
+.shape {
+  border-color: #666;
+}
+
+/* 标签 */
+.label {
+  background-color: #555;
+  color: #fff;
+}
+
+/* 代码 */
+pre {
+  background-color: #333;
+  color: #eee;
+}
+    /* 示例：一个简单的深色主题按钮 */
+    .theme-toggle {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 999;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .theme-toggle:hover {
+        background-color: #444;
+      }

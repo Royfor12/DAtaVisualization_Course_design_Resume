@@ -1,29 +1,541 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>简历</title>
+  <meta charset="utf-8">
+  <title>Roy的前端简历</title>
+  <!-- Stylesheets -->
+  <!-- 引入Bootstrap框架的样式表 -->
+  <link href="./src/css/bootstrap.css" rel="stylesheet">
+  <!-- 引入网站的自定义样式表 -->
+  <link href="./src/css/style.css" rel="stylesheet">
+  <!-- 引入响应式布局的样式表 -->
+  <link href="./src/css/responsive.css" rel="stylesheet">
+
+  <!-- 引入音乐播放器 -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <link rel="stylesheet" href="./src/css/icon.css">
+  <link rel="stylesheet" href="./src/css/music.css">
+  <!--引用BaiDu Maps API-->
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=lgj1icmXqYZaTf7V9WOs7Hj1FspANFSE"></script>
+  <script>Pie2(320, 320, "svg_pie2", 100);//画饼</script>
 </head>
+<!--Favicon-->
+<link rel="shortcut icon" href="./src/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="./src/img/favicon.ico" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+<svg_pie></svg_pie>
 
 <body>
-    <audio id="audioElement" autoplay="autoplay" loop="loop">		
-		<source src="./src/music/I_Got_Smoke.mp3" type="audio/mpeg" />
-		<source src="./src/music/I_Got_Smoke.mp3" type="audio/ogg" />
-	</audio>
-    <audio id="audioElement" src="./src/music/I_Got_Smoke.mp3" controls="controls" type="audio/mp3"></audio>
-    <h1>hello world</h1>
-    <h1>《数据可视化》期末大作业要求</h1>
+  <div class="page-wrapper default-version">
+    <!-- Preloader -->
+    <div class="preloader"></div>
 
-    内容：制作一份个人简历的网页。包含个人简介，个人主要人际关系，兴趣爱好，大学所学主要专业课程，专业特长，求职方向等内容。需要用到数据可视化课程的若干主要技术，如人物关系图，籍贯所在地图或重庆理工大学地图，课程得分饼图或其它展示形式，音乐可视化等等。内容没有具体的要求，同学们可以自由发挥。
-    得分评定：简历有美感，画面配色协调，打开简历有优美的音乐，各课程主要知识点融入简历中。<br>
+    <div class="page-background">
 
-    提交要求：14周周五。需要提交打印的纸质报告，报告内容要阐述清楚所制作的简历的过程。<br>
+    </div>
+    <!-- 模态对话框 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">微信二维码</h4>
+          </div>
+          <div class="modal-body">
+            <!-- 图片将在这里显示 -->
+            <img src="./src/img/resource/weichat.png" class="img-responsive center-block" alt="微信二维码">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <!--
+    .mobile-menu 包裹着整个移动菜单的结构。
+    .container 用于包含菜单内容。
+    -->
 
-    另：每个同学需要提交所有的电子档材料。包含课后作业，实验报告，期末大作业三个文件夹。学委统一收好后，14周周五提交。<br>
+    <div class="mobile-menu">
+      <div class="container">
+        <!--Nav Outer-->
+        <!-- 包含网站导航的外部容器 -->
+        <div class="nav-outer clearfix">
+          <div class="logo">
+            <!-- 网站的logo，点击会跳转到首页 -->
+            <!-- 设置图片大小为48x48像素 后期记得把图片处理成png -->
+            <a href="index.html"><img src="./src/img/logo1.jpg" alt="" style="width: 48px; height: 48px;"></a>
+          </div>
+          <!-- Main Menu -->
+          <!-- 网站的主要导航菜单 -->
+          <nav class="main-menu">
+            <div class="navbar-header">
+              <!-- Toggle Button -->
+              <!-- 用于在小屏幕设备上显示和隐藏导航菜单的按钮 -->
+              <!-- 增加按钮宽度以适应更宽的导航条 -->
+              <button type="button" class="navbar-toggle wider" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
 
-    <img id="tanChiShe" src="./src/svg/snake-Light.svg" alt="">
+            <div class="navbar-collapse collapse scroll-nav clearfix">
+              <ul class="navigation clearfix">
+                <li class="current"><a href="#home">主页</a></li>
+                <li><a href="#about">个人信息</a></li>
+                <li><a href="#tools">擅长技术</a></li>
+                <li><a href="#resume">工作经历</a></li>
+                <li><a href="#services">项目经验</a></li>
+                <li><a href="#work">开源项目</a></li>
+                <li><a href="#honor">荣誉证书</a></li>
+              </ul>
+            </div>
+          </nav>
+          <!-- Main Menu End-->
+        </div>
+        <!--Nav Outer End-->
+      </div>
+    </div>
+    <div class="card-outer">
+      <div class="music-player-container"></div>
+
+      <div class="scroll-box">
+        <div class="container" data-animation-in="fadeInLeft" data-animation-out="fadeOutLeft">
+          <div class="card-wrapper">
+            <div class="author-info" style="background:url(./src/img/background/3.jpg) no-repeat top center">
+              <div class="image"><img src="./src/img/resource/my.jpg" alt=""></div>
+              <div class="author">
+                <h3>Roy</h3>
+                <div class="designation">
+                  你好，我是
+                  <div class="typing-title">
+                    <p>一名<strong>前端程序员。</strong></p>
+                    <p>一名<strong>电子工程师。</strong></p>
+                    <p>一名<strong>摄影爱好者。</strong></p>
+                  </div>
+                  <span class="typed-title"></span>
+                </div>
+              </div>
+              <div class="link-btn">
+                <a href="#" class="theme-btn btn-style-one">下载简历</a>
+              </div>
+              <ul class="social-icon-two">
+                <li><a href="https://github.com/Royfor12"><span class="fa fa-github"></span></a></li>
+                <!-- <li><a href="./src/imgweichat.png"><span class="fa fa-weixin"></span></a></li> -->
+                <!-- 模态对话框触发按钮 -->
+                <li>
+                  <a data-toggle="modal" data-target="#myModal">
+                    <span class="fa fa-weixin"></span>
+                  </a>
+                </li>
+                <li><a href="#"><span class="fa fa-envelope-o"></span></a></li>
+              </ul>
+            </div>
+            <div class="card-inner-box">
+              <header class="header wow fadeInLeft" data-wow-duration="1.5s">
+                <ul class="main-menu">
+                  <li class="active home"><a class="logo" href="#home"><img src="./src/img/logo1.jpg" alt=""></a></li>
+                  <li><a href="#about"><i class="flaticon-social"></i>个人信息</a></li>
+                  <li><a href="#tools"><i class="flaticon-tools"></i>擅长技术</a></li>
+                  <li><a href="#education"><i class="flaticon-note"></i>教育背景</a></li>
+                  <li><a href="#experience"><i class="flaticon-curriculum"></i>大学经历</a></li>
+                  <li><a href="#services"><i class="flaticon-layers-1"></i>项目经验</a></li>
+                  <li><a href="#work"><i class="fa fa-github"></i>开源项目</a></li>
+                  <li><a href="#honor"><i class="iconfont icon-rongyu"></i>荣誉证书</a></li>
+                </ul>
+              </header>
+
+              <!-- card item -->
+              <div class="card-home card-item active" id="home"
+                style="background-image:url(./src/img/background/1.jpg)">
+                <div class="card-inner wow fadeInUp" data-wow-duration="2s">
+                  <div class="image"><img src="./src/img/resource/my.jpg" alt=""></div>
+                  <div class="author">
+                    <h3>Roy</h3>
+                    <div class="designation">
+                      你好，我是
+                      <div class="typing-title">
+                        <p>一名<strong>前端程序员。</strong></p>
+                        <p>一名<strong>电子工程师。</strong></p>
+                        <p>一名<strong>摄影爱好者。</strong></p>
+                      </div>
+                      <span class="typed-title"></span>
+                    </div>
+                  </div>
+                  <div class="text">
+                    专注嵌入式开发，熟练掌握使用CubeIDE开发STM32、VScode开发ESP32等MCU，
+                    熟悉使用Arduino框架开发各种传感器、电机等硬件设备;同时掌握前端开发技术。
+                    </p>
+                  </div>
+                  <div class="link-btn">
+                    <a href="https://github.com/Royfor12" class="theme-btn btn-style-one" target="_blank">GitHub</a>
+
+                    <a href="https://space.bilibili.com/52450184" class="theme-btn btn-style-two"
+                      target="_blank">B站首页</a>
+                  </div>
+                </div>
+
+              </div>
+              <!-- end item -->
+
+              <!-- card item -->
+              <div class="card-about card-item" id="about">
+                <div class="card-inner">
+                  <h4 class="title">个人信息</h4>
+                  <div class="info-list col-md-12">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <ul class="list-style-one">
+                          <li><strong>姓名:</strong> Roy</li>
+                          <li><strong>微信:</strong> 19150772158</li>
+                          <li><strong>地址:</strong> 重庆市巴南区红光大道</li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <ul class="list-style-one">
+                          <li><strong>邮箱:</strong> 1205503904@qq.com</li>
+                          <li><strong>学历:</strong> 本科</li>
+                          <li><strong>GitHub:</strong> <a target='black'
+                              href="https://github.com/Royfor12">https://github.com/Royfor12</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="education col-md-12">
+                    <div class="row">
+                      <h4 class="title">地理位置</h4>
+                      <div id="Map" style="width: 60%; height: 280px;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end item -->
+              <!-- card item -->
+              <div class="card-about card-item" id="tools">
+                <div class="card-inner">
+                  <h3 class="title">擅长技术</h3>
+                  <div class="col-md-12">
+                    <div> </div>
+                    <div class="row">
+                      <!-- About Block -->
+                      <!-- 技能展示块开始 -->
+                      <div class="skill-block col-md-3 col-sm-4 col-xs-6">
+                        <!-- 内部容器 -->
+                        <svg_pie2></svg_pie2>
+                      </div>
+                      <!-- 技能展示块结束 -->
+                      <!-- About Block -->
+                    </div>
+                    <div class="row">
+                      <div class="skill-info">
+                        <h3 class="sub-title">🛠 技术栈 | Tech Stack</h3>
+                        <!-- 中英混排有点冗余啊Programming Languages -->
+                        <h4>编程语言 🧑‍💻</h4>
+                        <div class="labels">
+                          <img src="./src/img/icons/svg/c.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/python.webp" alt="Image description" width="30" height="30"
+                            type="image/webp">
+                          <img src="./src/img/icons/svg/html5.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/css.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/js.webp" alt="SVG Image" width="30" height="30">
+                          <img alt="Static Badge" src="https://img.shields.io/badge/FPGA-verilog-blue">
+                        </div>
+
+                        <h4>工具与框架 🔨</h4>
+                        <div class="labels">
+                          <img src="./src/img/icons/svg/arduino_.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/docker.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/Bootstrap.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/raspi.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/FPGA.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/iot.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/powershell.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/vim-gtk.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/cmake.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/vscode.webp" alt="SVG Image" width="30" height="30">
+                          <img alt="Static Badge" src="https://img.shields.io/badge/STM32-CubeIDE-6495ed">
+                          <img src="./src/img/icons/Matlab_Logo.png" alt="png Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/XCode.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/git2.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/github.webp" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/markdown.svg" alt="SVG Image" width="25" height="20">
+                        </div>
+
+                        <h4>操作系统💻</h4>
+                        <div class="labels">
+                          <img src="./src/img/icons/svg/macos.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/Windows.svg" alt="SVG Image" width="30" height="30">
+                          <img src="./src/img/icons/svg/ubuntu.svg" alt="SVG Image" width="30" height="30">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end item -->
+
+              <!-- card item -->
+              <div class="card-resume card-item" id="education">
+                <div class="card-inner">
+                  <h4 class="title">教育背景</h4>
+                  <!--Column-->
+                  <div class="timeline-column col-md-12">
+                    <div class="row clearfix">
+                      <div class="inner">
+                        <!--Timeline Block-->
+                        <div class="timeline-block">
+                          <div class="inner-box">
+                            <h4>重庆理工大学</h4>
+                            <div class="date"><span>2021.09-至今</span> /电子信息工程 学士
+                            </div>
+                          </div>
+                        </div>
+                        <!--Timeline Block-->
+                        <div class="timeline-block">
+                          <div class="inner-box">
+                            <h4>GPA</h4>
+                            <div class="date">3.6</div>
+                            <div class="text">
+                              占位
+                            </div>
+                          </div>
+                        </div>
+                        <!--Timeline Block-->
+                        <div class="timeline-block">
+                          <div class="inner-box">
+                            <h4>专业基础</h4>
+                            <div class="date">电路原理 模拟电子技术 数据与系统 数字电子技术 高频电子线路 微机原理及应用</div>
+                            <div class="text">
+                              占位
+                            </div>
+                          </div>
+                        </div>
+                        <!--Timeline Block-->
+                        <div class="timeline-block">
+                          <div class="inner-box">
+                            <h4>专业核心</h4>
+                            <div class="date">信号与系统 工程电磁场 数字信号处理 现代编码技术 DSP技术及应用 通信原理</div>
+                            <div class="text">
+                              占位
+                            </div>
+                          </div>
+                        </div>
+                        <!-- timeline Block -->
+                        <div class="timeline-block">
+                          <div class="inner-box">
+                            <h4>专业选修</h4>
+                            <div class="date">智能数据分析程序设计(Python) 数据可视化 语音信号处理 </div>
+                            <div class="text">
+                              占位
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end item -->
+
+              <!-- card item -->
+              <div class="card-resume card-item" id="experience">
+
+              </div>
+              <!-- end item -->
+
+              <!-- card item -->
+              <div class="card-resume card-item" id="services">
+                <div class="card-inner">
+                  <h4 class="title">项目经验</h4>
+                  <!--Column-->
+                  <div class="timeline-column  col-md-12">
+                    <div class="row clearfix">
+                      <div class="inner">
+                        <!--Timeline Block-->
+                        <div class="timeline-block">
+                          <div class="inner-box">
+                            <h4>占位符</h4>
+                            <div class="date"> 占位符</div>
+                            <div class="text">
+                              <div>技术栈:占位符</div>
+                              <ul>
+                                <li>占位符</li>
+                                <li>占位符</li>
+                                <li>占位符</li>
+                                <li>占位符</li>
+                                <li>占位符</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="timeline-block">
+                          <div class="inner-box">
+                            <h4>占位符</h4>
+                            <div class="date"> 项目描述：占位符</div>
+                            <div class="text">
+                              <div> 技术栈: 占位符</div>
+                              <ul>
+                                <li>占位符</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="timeline-block">
+                          <div class="inner-box">
+                            <h4>占位符</h4>
+                            <div class="date">项目描述：占位符</div>
+                            <div class="text">
+                              <div>技术栈: 占位符</div>
+                              <ul>
+                                <li>占位符</li>
+                                <li>占位符</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="timeline-block">
+                          <div class="inner-box">
+                            <h4>占位符</h4>
+                            <div class="date">项目描述：占位符</div>
+                            <div class="text">
+                              <div>技术栈: 占位符</div>
+                              <ul>
+                                <li>占位符</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end item -->
+
+              <!-- card item -->
+              <div class="card-projects card-item" id="work">
+                <div class="card-inner">
+                  <h4 class="title">开源项目</h4>
+                  <div class="row">
+                    <div class="services-block col-md-12">
+                      <div class="inner-box">
+                        <div class="icon-box"><span class="icon flaticon-folder"></span></div>
+                        <h4><a
+                            href="https://github.com/Royfor12/CQUT-electronic-information-engineering">重庆理工大学-课程攻略共享计划
+                            <img
+                              src="https://img.shields.io/github/stars/Royfor12/CQUT-electronic-information-engineering.svg?style=social" /></a>
+                        </h4>
+                        <div class="text">占位符</div>
+                      </div>
+                    </div>
+                    <div class="services-block col-md-12">
+                      <div class="inner-box">
+                        <div class="icon-box"><span class="icon flaticon-coding"></span></div>
+                        <h4><a href="https://github.com/Royfor12/CQUT-FPGA-Electric_Piano">FPGA_硬件电路设计_音乐盒&电子琴<img
+                              src="https://img.shields.io/github/stars/Royfor12/CQUT-FPGA-Electric_Piano.svg?style=social" /></a>
+                        </h4>
+                        <div class="text">占位符</div>
+                      </div>
+                    </div>
+                    <div class="services-block col-md-12">
+                      <div class="inner-box">
+                        <div class="icon-box"><span class="icon flaticon-computer"></span></div>
+                        <h4><a href="https://github.com/Royfor12/CQUT_esp32_for_elink">基于ESP32的智能墨水屏日历 <img
+                              src="https://img.shields.io/github/stars/Royfor12/CQUT_esp32_for_elink.svg?style=social" /></a>
+                        </h4>
+                        <div class="text">占位符</div>
+                      </div>
+                    </div>
+
+                    <div class="services-block col-md-12">
+                      <div class="inner-box">
+                        <div class="icon-box"><span class="icon flaticon-layers-1"></span></div>
+                        <h4><a href="https://github.com/Royfor12/CQUT_Bluetooth_PCB">重庆理工大学电子实训蓝牙主控版<img
+                              src="https://img.shields.io/github/stars/Royfor12/CQUT_Bluetooth_PCB.svg?style=social" /></a>
+                        </h4>
+                        <div class="text">占位符</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end item -->
+              <!-- card item -->
+              <div class="card-honor card-item" id="honor">
+                <div class="card-inner">
+                  <h4 class="title">证书</h4>
+                  <div class="col-md-12">
+                    <ul class="list-style-two">
+                      <li><span class="iconfont icon-rongyu"></span>大学英语四级 <span class="level">通过</span></li>
+                    </ul>
+                  </div>
+                  <h4 class="title">荣誉</h4>
+                  <div class="col-md-12">
+                    <ul class="list-style-two">
+                      <li><span class="iconfont icon-rongyu"></span>乙等奖学金 <span class="level">校级</span></li>
+                      <li><span class="iconfont icon-rongyu"></span>互联网+铜奖 <span class="level">校级</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- end item -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End pagewrapper-->
+  <script src="./src/js/rule_js/jquery.js"></script>
+  <script src="./src/js/rule_js/bootstrap.min.js"></script>
+  <script src="./src/js/rule_js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="./src/js/rule_js/owl.js"></script>
+  <script src="./src/js/rule_js/wow.js"></script>
+  <script src="./src/js/rule_js/appear.js"></script>
+  <script src="./src/js/rule_js/jquery.fancybox.js"></script>
+  <script src="./src/js/rule_js/element-in-view.js"></script>
+  <script src="./src/js/rule_js/knob.js"></script>
+  <script src="./src/js/rule_js/validate.js"></script>
+  <script src="./src/js/rule_js/mousemoveparallax.js"></script>
+  <script src="./src/js/rule_js/pagenav.js"></script>
+  <script src="./src/js/rule_js/jquery-type.js"></script>
+  <script src="./src/js/rule_js/jquery.nicescroll.min.js"></script>
+  <script src="./src/js/rule_js/particle-alone.js"></script>
+  <script src="./src/js/rule_js/script.js"></script>
+  <script type="text/javascript" src="./src/js/rule_js/echarts.min.js"></script>
+  <script type="text/javascript" src="./src/js/rule_js/bmap.min.js"></script>
+  <script type="text/javascript" src="./src/js/rule_js/d3.v4.min.js"></script>
+  <script type="text/javascript" src="./src/js//my_js/d3_data_chart.js"></script>
+  <script type="text/javascript" src="./src/js/my_js/DrawMaps.js"></script>
+  <script src="./src/js/my_js/music.js"></script>
+  <!-- 有空了记得整合到一起 -->
+  <script>
+    $(document).ready(function () {
+      DrawMaps();
+      Mask(MaskMainCity);
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      $(".music-player-container").load("music.html");
+    });
+  </script>
+  <!-- <iframe>标签不好使，所以只能用这个方法 
+    Ajax动态加载：使用JavaScript（如jQuery的load方法）
+    可以在页面加载后动态地从服务器请求HTML内容并插入到页面中。 -->
 </body>
 
 </html>
