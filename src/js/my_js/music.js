@@ -21,7 +21,8 @@ window.onload = function () {
     musicListen();
     volumeSet();
     musicJump();
-    musicOBJ.play();
+    musicStart();
+    //musicOBJ.play();
 }
 
 //初始化变量 
