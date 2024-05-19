@@ -9,7 +9,7 @@
     width: 500px;
     height: 50px;
     position: absolute;
-    bottom: 0; /* 修改定位到底部 */
+    bottom: 30px; /* 修改定位到底部 */
     left: 50%;
     transform: translateX(-50%); /* 仅水平居中 */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
