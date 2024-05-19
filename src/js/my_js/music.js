@@ -23,13 +23,13 @@ window.onload = function () {
     musicJump();
     //musicStart();
     stateSet.className = "state_set iconfont icon-24gf-pause2";
-            musicOBJ.play();
-            musicTime();
-            time = setInterval(() => {
-                i1++;
-                musicHead.style.transform = `rotate(${i1}deg)`;
-            }, 20);
-            f1 = true;
+    musicOBJ.play();
+    musicTime();
+    time = setInterval(() => {
+        i1++;
+        musicHead.style.transform = `rotate(${i1}deg)`;
+    }, 20);
+    f1 = true;
 }
 
 //初始化变量 
