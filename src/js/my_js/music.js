@@ -21,15 +21,6 @@ window.onload = function () {
     musicListen();
     volumeSet();
     musicJump();
-    //musicStart();
-    stateSet.className = "state_set iconfont icon-24gf-pause2";
-    musicOBJ.play();
-    musicTime();
-    time = setInterval(() => {
-        i1++;
-        musicHead.style.transform = `rotate(${i1}deg)`;
-    }, 20);
-    f1 = true;
 }
 
 //初始化变量 
@@ -51,28 +42,20 @@ function musicPlaySet() {
             musicStop();
             //点击开始的时候 
         } else {
-            //musicStart();
-            stateSet.className = "state_set iconfont icon-24gf-pause2";
-            musicOBJ.play();
-            musicTime();
-            time = setInterval(() => {
-                i1++;
-                musicHead.style.transform = `rotate(${i1}deg)`;
-            }, 20);
-            f1 = true;
+            musicStart();
         }
     }
 }
-// function musicStart() {
-//     stateSet.className = "state_set iconfont icon-24gf-pause2";
-//     musicOBJ.play();
-//     musicTime();
-//     time = setInterval(() => {
-//         i1++;
-//         musicHead.style.transform = `rotate(${i1}deg)`;
-//     }, 20);
-//     f1 = true;
-// }
+function musicStart() {
+    stateSet.className = "state_set iconfont icon-24gf-pause2";
+    musicOBJ.play();
+    musicTime();
+    time = setInterval(() => {
+        i1++;
+        musicHead.style.transform = `rotate(${i1}deg)`;
+    }, 20);
+    f1 = true;
+}
 // 音乐对象的时间的显示方法
 function musicTime() {
     let time = Math.floor(musicOBJ.duration);
