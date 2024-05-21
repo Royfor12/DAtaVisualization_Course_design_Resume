@@ -21,6 +21,7 @@ window.onload = function () {
     musicListen();
     volumeSet();
     musicJump();
+    musicStart();//确保动画
 }
 
 //初始化变量 
