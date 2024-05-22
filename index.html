@@ -16,6 +16,8 @@
   <script type="text/javascript" src="./src/js/rule_js/d3.v4.min.js"></script>
   <script type="text/javascript" src="./src/js//my_js/d3_data_chart.js"></script>
   <script type="text/javascript" src="./src/js/my_js/DrawMaps.js"></script>
+  <script type="text/javascript" src="./src/js//my_js/hist.js"></script>
+
   <!-- 引入音乐播放器 -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Chrome">
@@ -24,7 +26,11 @@
   <link rel="stylesheet" href="./src/css/music.css">
   <!--引用BaiDu Maps API-->
   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=lgj1icmXqYZaTf7V9WOs7Hj1FspANFSE"></script>
-  <script>Pie2(320, 320, "svg_pie2", 100);//画饼</script>
+  <script>
+    Pie2(320, 320, "svg_pie2", 100);//画饼
+    Hist(450, 290, "svg_hist", "./src/json/hist.json");//画直方图
+  </script>
+
 </head>
 <!--Favicon-->
 <link rel="shortcut icon" href="./src/img/favicon.ico" type="image/x-icon">
@@ -32,18 +38,14 @@
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
 </head>
 <svg_pie></svg_pie>
 
 <body>
   <div class="page-wrapper default-version">
-    <!-- Preloader -->
     <div class="preloader"></div>
-
     <div class="page-background">
-
     </div>
     <!-- 模态对话框 -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -69,7 +71,6 @@
     .mobile-menu 包裹着整个移动菜单的结构。
     .container 用于包含菜单内容。
     -->
-
     <div class="mobile-menu">
       <div class="container">
         <!--Nav Outer-->
@@ -115,7 +116,6 @@
     </div>
     <div class="card-outer">
       <div class="music-player-container"></div>
-
       <div class="scroll-box">
         <div class="container" data-animation-in="fadeInLeft" data-animation-out="fadeOutLeft">
           <div class="card-wrapper">
@@ -186,12 +186,10 @@
                   </div>
                   <div class="link-btn">
                     <a href="https://github.com/Royfor12" class="theme-btn btn-style-one" target="_blank">GitHub</a>
-
                     <a href="https://space.bilibili.com/52450184" class="theme-btn btn-style-two"
                       target="_blank">B站首页</a>
                   </div>
                 </div>
-
               </div>
               <!-- end item -->
 
@@ -304,48 +302,43 @@
                         <div class="timeline-block">
                           <div class="inner-box">
                             <h4>重庆理工大学</h4>
-                            <div class="date"><span>2021.09-至今</span> /电子信息工程 学士
+                            <div class="date"><span>2021.09-至今</span> 电子信息工程 学士
                             </div>
                           </div>
                         </div>
-                        <!--Timeline Block-->
+                        <!-- Block-->
                         <div class="timeline-block">
                           <div class="inner-box">
                             <h4>GPA</h4>
                             <div class="date">3.6</div>
-                            <div class="text">
-                              占位
-                            </div>
                           </div>
                         </div>
-                        <!--Timeline Block-->
+                        <!-- Block-->
                         <div class="timeline-block">
                           <div class="inner-box">
                             <h4>专业基础</h4>
                             <div class="date">电路原理 模拟电子技术 数据与系统 数字电子技术 高频电子线路 微机原理及应用</div>
-                            <div class="text">
-                              占位
-                            </div>
                           </div>
                         </div>
-                        <!--Timeline Block-->
+                        <!-- Block-->
                         <div class="timeline-block">
                           <div class="inner-box">
                             <h4>专业核心</h4>
                             <div class="date">信号与系统 工程电磁场 数字信号处理 现代编码技术 DSP技术及应用 通信原理</div>
-                            <div class="text">
-                              占位
-                            </div>
                           </div>
                         </div>
-                        <!-- timeline Block -->
+                        <!--  Block -->
                         <div class="timeline-block">
                           <div class="inner-box">
                             <h4>专业选修</h4>
                             <div class="date">智能数据分析程序设计(Python) 数据可视化 语音信号处理 </div>
-                            <div class="text">
-                              占位
-                            </div>
+                          </div>
+                        </div>
+                        <!--  Block -->
+                        <div class="timeline-block">
+                          <div class="inner-box">
+                            <h4>专业课绩点分布分析</h4>
+                            <svg_hist></svg_hist>
                           </div>
                         </div>
                       </div>
@@ -359,6 +352,31 @@
               <div class="card-resume card-item" id="experience">
                 <div class="card-inner">
                   <h4 class="title">大学经历</h4>
+                  <div class="timeline-column col-md-12">
+                    <div class="row clearfix">
+                      <div class="inner">
+                        <!--Timeline Block-->
+                        <div class="timeline-block">
+                          <div class="inner-box">
+                            <h4>学生工作</h4>
+                            <div class="date"><span>2021.09-2022.06</span> 重庆理工大学两江校区传媒中心干事 </div>
+                            <div class="date"><span>2022.06-2023.06</span> 重庆理工大学新闻中心干事 </div>
+                            <div class="date"><span>2023.06-2024.05</span> 重庆理工大学电气与电子工程学院传媒中心部长 </div>
+                          </div>
+                        </div>
+                        <div class="timeline-block">
+                          <div class="inner-box">
+                            <h4>竞赛经历</h4>
+                            <div class="date"><span>2022年</span>全国大学生电子设计竞赛</div><br>
+                            <div class="date"><span>2023年</span>重庆理工大学开拓杯</div><br>
+                            <div class="date"><span>2023年</span>重庆理工大学“无线电杯”电子设计竞赛</div><br>
+                            <div class="date"><span>2023年</span>全国大学生嵌入式芯片与系统设计竞赛</div><br>
+                            <div class="date"><span>2023年</span>全国大学生电子设计竞赛</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <!-- end item -->
@@ -371,11 +389,12 @@
                   <div class="timeline-column  col-md-12">
                     <div class="row clearfix">
                       <div class="inner">
-                        <!--Timeline Block-->
+                        <!--Block-->
                         <div class="timeline-block">
                           <div class="inner-box">
                             <h4>硬件电路设计_音乐盒&电子琴</h4>
-                            <div class="date"> 本项目基于小脚丫STEP-MAX10-02与拓展板， 可实现电子琴和音乐盒功能，使用拨码切换，音乐盒目前内置两个歌曲，可用拨码切换。</div>
+                            <div class="date"> 本项目基于小脚丫STEP-MAX10-02与拓展板， 可实现电子琴和音乐盒功能，使用拨码切换，音乐盒目前内置两个歌曲，可用拨码切换。
+                            </div>
                             <div class="text">
                               <div>技术栈:FPGA-verilog Quartus II</div>
                               <!-- <ul>
@@ -384,18 +403,20 @@
                             </div>
                           </div>
                         </div>
+                        <!--Block-->
                         <div class="timeline-block">
                           <div class="inner-box">
                             <h4>Arduino智能电子日历</h4>
                             <div class="date"> 基于ESP32和Arduino ide驱动4.2寸三色电子墨水屏</div>
                             <div class="text">
                               <div> 技术栈: Arduino ESP32 C语言 立创eda</div>
-                              <ul>
+                              <!-- <ul>
                                 <li>占位符</li>
-                              </ul>
+                              </ul> -->
                             </div>
                           </div>
                         </div>
+                        <!--Block-->
                         <div class="timeline-block">
                           <div class="inner-box">
                             <h4>电子实训蓝牙主控版</h4>
@@ -405,7 +426,6 @@
                             </div>
                           </div>
                         </div>
-                        
                       </div>
                     </div>
                   </div>
@@ -418,6 +438,7 @@
                 <div class="card-inner">
                   <h4 class="title">开源项目</h4>
                   <div class="row">
+                    <!--Block-->
                     <div class="services-block col-md-12">
                       <div class="inner-box">
                         <div class="icon-box"><span class="icon flaticon-folder"></span></div>
@@ -429,6 +450,7 @@
                         <div class="text">仓库之目的即推动知识传播、提高资源质量、减少获取成本、提倡无纸化资料、促进教育公平，让西唯兵学子在备考、复习之时不必再苦寻资料。</div>
                       </div>
                     </div>
+                    <!--Block-->
                     <div class="services-block col-md-12">
                       <div class="inner-box">
                         <div class="icon-box"><span class="icon flaticon-coding"></span></div>
@@ -438,6 +460,7 @@
                         <div class="text">本项目基于小脚丫STEP-MAX10-02与拓展板， 可实现电子琴和音乐盒功能，使用拨码切换，音乐盒目前内置两个歌曲，可用拨码切换。</div>
                       </div>
                     </div>
+                    <!--Block-->
                     <div class="services-block col-md-12">
                       <div class="inner-box">
                         <div class="icon-box"><span class="icon flaticon-computer"></span></div>
@@ -447,7 +470,7 @@
                         <div class="text">基于ESP32和Arduino ide驱动4.2寸三色电子墨水屏</div>
                       </div>
                     </div>
-
+                    <!--Block-->
                     <div class="services-block col-md-12">
                       <div class="inner-box">
                         <div class="icon-box"><span class="icon flaticon-layers-1"></span></div>
@@ -480,13 +503,10 @@
                 </div>
               </div>
               <!-- end item -->
-
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
   </div>
   <!--End pagewrapper-->
