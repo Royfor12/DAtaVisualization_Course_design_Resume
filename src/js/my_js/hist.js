@@ -1,8 +1,6 @@
 
 // 画直方图
 function Hist(width, height, where, path) {
-    // var width = (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) * 0.98;
-    // var height = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) * 0.9;
     var color = d3.scaleOrdinal(d3.schemeCategory20);
     d3.json(path, function (error, data) {
         console.log(data);
@@ -58,11 +56,6 @@ function Hist(width, height, where, path) {
                 var y = height - dataset[data.length - 2] - data[2][1] * 4.6;
                 return "translate(" + x + "," + y + ")";
             })
-            // .attr("text-anchor", "middle")
-            // .attr("font-size", 20)
-            // .text("专业课绩点分布情况")
-            // .attr("stroke-width", 0.5)
-            // .attr("stroke", "black");
         var ButtonText = svg.selectAll("ButtonText")
             .data(dataset)
             .enter()
